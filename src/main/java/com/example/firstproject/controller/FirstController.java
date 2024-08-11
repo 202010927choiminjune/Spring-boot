@@ -4,6 +4,7 @@ package com.example.firstproject.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.ui.Model;
 
 
 //컨트롤러 선언
@@ -12,8 +13,14 @@ public class FirstController {
     //요청
     @GetMapping("/hi")
     //메서드 작성
-    public String niceToMeetYou(){
+    public String niceToMeetYou(Model model){
+        model.addAttribute("username","최민준");
         return "greetings";
+    }
+    @GetMapping("/bye")
+    public String seeYouNext(Model model){
+        model.addAttribute("nickname","최민준");
+        return "goodbye";
     }
 }
 //greetings.mustache파일 반환
