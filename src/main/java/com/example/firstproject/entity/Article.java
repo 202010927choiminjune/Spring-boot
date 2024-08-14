@@ -26,7 +26,7 @@ public class Article {
     // toString() 메서드 추가
     @Override
     public String toString () {
-        return "Article{" + "id" + id +", title ='" + title + '\''+",content='"+content + '\''+'}';
+        return "Article{" + "id =" + id +", title ='" + title + '\''+",content='"+content + '\''+'}';
 
     }
 }
