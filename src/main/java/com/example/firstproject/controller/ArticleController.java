@@ -57,7 +57,7 @@ public class ArticleController {
         // 2. 모델에 데이티 등록하기
         model.addAttribute("articleList", articleEntityList); // articleEntityList등록
         // 3. 뷰 페이지 설정하기
-        return "";
+        return "articles/index";
     }
 }
 
