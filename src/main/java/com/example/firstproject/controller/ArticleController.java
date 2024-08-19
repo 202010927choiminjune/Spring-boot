@@ -83,7 +83,7 @@ public class ArticleController {
             articleRepository.save(articleEntity); //엔티티를 DB에 저장
         }
         //3. 수정 결과 페이지로 리다이렉트하기
-        return"";
+        return "redirect:/articles/" + articleEntity.getId();
     }
 }
 
