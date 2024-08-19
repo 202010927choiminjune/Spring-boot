@@ -68,5 +68,9 @@ public class ArticleController {
         //뷰 페이지 설정하기
         return "articles/edit";
     }
+    @PostMapping("/articles/update")
+    public String update(){
+        return"";
+    }
 }
 
