@@ -18,6 +18,8 @@ public class ArticleApiController {
 
     @Autowired
     private ArticleService articleService;
+    @Autowired
+    private ArticleRepository articleRepository;
 
     //GET
     @GetMapping("/api/articles")
@@ -30,12 +32,15 @@ public class ArticleApiController {
         return articleService.show(id);
     }
     //POST
-    /*
+
     @PostMapping("/api/articles")
-    public Article create(@RequestBody ArticleForm dto){
-        Article article =dto.toEntity();
-        return articleRepository.save(article);
+    public ResponseEntity<Article> create(@RequestBody ArticleForm dto){
+        Article created = articleService.create(dto); //서비스로 게시글 생성
+        return (created != null) ?
+                ResponseEntity.status(HttpStatus.OK).body(created) :
+                ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
     }
+    /*
     //PATCH
     @PatchMapping("/api/articles/{id}")
     public ResponseEntity<Article> update(@PathVariable Long id, @RequestBody ArticleForm dto){
