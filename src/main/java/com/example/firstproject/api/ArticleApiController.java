@@ -3,6 +3,7 @@ package com.example.firstproject.api;
 import com.example.firstproject.dto.ArticleForm;
 import com.example.firstproject.entity.Article;
 import com.example.firstproject.repository.ArticleRepository;
+import com.example.firstproject.service.ArticleService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -14,8 +15,10 @@ import java.util.List;
 @Slf4j
 @RestController
 public class ArticleApiController {
+
     @Autowired
-    private ArticleRepository articleRepository;
+    private ArticleService articleService;
+    /*
     //GET
     @GetMapping("/api/articles")
     public List<Article> index(){
@@ -63,5 +66,5 @@ public class ArticleApiController {
         articleRepository.delete(target);
         return ResponseEntity.status(HttpStatus.OK).build();
     }
-
+*/
 }
