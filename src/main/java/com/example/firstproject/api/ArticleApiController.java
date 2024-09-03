@@ -24,12 +24,13 @@ public class ArticleApiController {
     public List<Article> index(){
         return articleService.index();
     }
-    /*
+
     @GetMapping("/api/articles/{id}")
     public Article show(@PathVariable Long id){
-        return articleRepository.findById(id).orElse(null);
+        return articleService.show(id);
     }
     //POST
+    /*
     @PostMapping("/api/articles")
     public Article create(@RequestBody ArticleForm dto){
         Article article =dto.toEntity();
